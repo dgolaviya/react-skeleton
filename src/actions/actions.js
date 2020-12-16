@@ -3,7 +3,8 @@ import setAuthToken from "../utils/setAuthToken";
 import {
   LOGIN_USER,
   SET_USER_AUTHORIZED,
-  REGISTER_USER
+  REGISTER_USER,
+  FETCH_USERS
 } from "./types";
 
 // Register User
@@ -19,7 +20,6 @@ export const registerUser = (userData) => {
 };
 
 export const loginUser = userData => {
-  console.log('userData', userData);
   const url = '/users/login';
   const payload = {
     action: LOGIN_USER,
@@ -29,6 +29,17 @@ export const loginUser = userData => {
   };
   return { type: "API_INVOCATION", payload };
 };
+
+export const fetchUsers = () => {
+  const url = '/users';
+  const payload = {
+    action: FETCH_USERS,
+    method: 'GET',
+    url
+  };
+  return { type: "API_INVOCATION", payload };
+};
+
 
 export const logoutUser = () => {
   // Remove token from local storage
