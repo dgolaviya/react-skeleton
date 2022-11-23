@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
 import Deposits from "./Deposits";
 import Orders from "./Orders";
-import Chart from "./Chart";
+import BarChart from "./BarChart";
 
 function Copyright() {
   return (
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 240,
+    height: 600,
   },
 }));
 
@@ -44,7 +44,8 @@ const Reports = () => {
         {/* Chart */}
         <Grid item xs={12} md={8} lg={9}>
           <Paper className={fixedHeightPaper}>
-            <Chart />
+            {/* <Chart /> */}
+            <BarChart />
           </Paper>
         </Grid>
         {/* Recent Deposits */}
